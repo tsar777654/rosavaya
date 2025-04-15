@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔥 FindLoveNow - Real Singles Near You</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff2d55, #ff5e3a);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #fff;
+      color: #ff2d55;
+      padding: 15px 30px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #ffe4ec;
+    }
+
+    .countdown {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #ffd6e0;
+    }
+
+    .hero-img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://images.unsplash.com/photo-1606741965429-56b8b7d340ad?auto=format&fit=crop&w=800&q=80" alt="Find Love" class="hero-img" />
+    <h1>Ready for Real Connections?</h1>
+    <p>Find local singles looking for fun, love and everything in between. Don't wait – spots are limited!</p>
+    <a href="https://vmnjxa.abadit5rckb.com/c/d246faf9716716f8?SUBID=${SUBID}&cost={cost}&zoneid={zoneid}&campaignid={campaignid}&bannerid={bannerid}&zone_type={zone_type}&user_activity={user_activity}&os={os}&osversion={osversion}&region={region}&isp={isp}&connection_type={connection.type}" class="cta-button">Start Now</a>
+    <div class="countdown" id="countdown">Offer expires in: <span id="timer">05:00</span></div>
+  </div>
+
+  <script>
+    let time = 300;
+    const timerEl = document.getElementById("timer");
+    setInterval(() => {
+      if (time <= 0) return;
+      time--;
+      const minutes = Math.floor(time / 60).toString().padStart(2, '0');
+      const seconds = (time % 60).toString().padStart(2, '0');
+      timerEl.textContent = `${minutes}:${seconds}`;
+    }, 1000);
+  </script>
+</body>
+</html>
