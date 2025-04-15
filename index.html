@@ -128,12 +128,13 @@
   <div class="container">
     <img src="hero-image.jpg" alt="Find Love" class="hero-img" />
     <h1>Ready for Real Connections?</h1>
-    <p>Find local singles looking for fun, love, and everything in between. Don't wait – spots are limited!</p>
+    <p>Find local singles near <span id="user-city">your city</span> looking for fun, love, and everything in between. Don't wait – spots are limited!</p>
     <a href="https://vmnjxa.abadit5rckb.com/c/d246faf9716716f8?SUBID=${SUBID}&cost={cost}&zoneid={zoneid}&campaignid={campaignid}&bannerid={bannerid}&zone_type={zone_type}&user_activity={user_activity}&os={os}&osversion={osversion}&region={region}&isp={isp}&connection_type={connection.type}" class="cta-button">Start Now</a>
     <div class="countdown" id="countdown">Offer expires in: <span id="timer">01:00</span></div>
   </div>
 
   <script>
+    // Таймер на 1 минуту
     let time = 60;
     const timerEl = document.getElementById("timer");
     setInterval(() => {
@@ -143,6 +144,30 @@
       const seconds = (time % 60).toString().padStart(2, '0');
       timerEl.textContent = `${minutes}:${seconds}`;
     }, 1000);
+
+    // Определение города пользователя
+    function getCity() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+
+          // Используем бесплатный API для получения информации о местоположении
+          fetch(`https://geocode.xyz/${latitude},${longitude}?json=1`)
+            .then(response => response.json())
+            .then(data => {
+              const city = data.city || 'your city';
+              document.getElementById("user-city").textContent = city;
+            })
+            .catch(error => console.log("Geolocation error:", error));
+        });
+      } else {
+        console.log("Geolocation is not supported by this browser.");
+      }
+    }
+
+    // Запуск функции для получения города
+    getCity();
   </script>
 </body>
 </html>
