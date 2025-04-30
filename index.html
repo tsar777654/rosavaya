@@ -2,67 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Age Verification</title>
   <style>
     body {
+      background: #111;
+      color: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
       padding-top: 100px;
-      background-color: white;
     }
     h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-    .age-18 {
-      font-size: 80px;
-      font-weight: bold;
-      background: linear-gradient(45deg, #4facfe, #00f2fe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 36px;
       margin-bottom: 20px;
     }
     p {
-      font-size: 20px;
-      margin-bottom: 30px;
+      font-size: 18px;
+      margin-bottom: 40px;
     }
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
+    .btn {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
     }
-    .button-yes {
-      background-color: limegreen;
+    .yes-btn {
+      background-color: #28a745;
       color: white;
-      padding: 15px 50px;
-      font-size: 20px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
     }
-    .button-no {
-      background-color: lightgray;
-      color: black;
-      padding: 15px 50px;
-      font-size: 20px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
+    .no-btn {
+      background-color: #dc3545;
+      color: white;
     }
   </style>
 </head>
 <body>
-
-  <h1>Age verification</h1>
-  <div class="age-18">18+</div>
-  <p>You are 18 years old?</p>
-
-  <div class="buttons">
-    <a href="https://jndbdj.lonelylady.net/?utm_source=da57dc555e50572d&ban=push&j1=1&s1=233166&s2=2115496&click_id=<tid>" class="button-yes">YES</a>
-    <a href="https://jndbdj.lonelylady.net/?utm_source=da57dc555e50572d&ban=push&j1=1&s1=233166&s2=2115496&click_id=<tid>" class="button-no">NO</a>
-  </div>
-
+  <h1>Are You 18 or Older?</h1>
+  <p>This website contains adult content intended for individuals 18 years of age or older.</p>
+  <a class="btn yes-btn" href="https://jndbdj.lonelylady.net/?utm_source=da57dc555e50572d&ban=push&j1=1&s1=233166&s2=2115496&click_id=<tid>">YES, I AM</a>
+  <a class="btn no-btn" href="https://google.com">NO, I’M NOT</a>
 </body>
 </html>
