@@ -114,24 +114,25 @@
     <p>This site contains content only suitable for adults.<br>Click "Yes" to continue.</p>
     <div class="buttons">
       <a class="btn btn-no" href="javascript:void(0)" onclick="denyAccess()">No</a>
-      <a class="btn btn-yes" href="javascript:void(0)" onclick="window.open(decodeURIComponent(window.location.href.substr(window.location.href.lastIndexOf('aref=')+5)), '_self');">Yes</a>
+      <a class="btn btn-yes" href="javascript:void(0)" onclick="handleYesClick()">Yes</a>
     </div>
   </div>
 
   <script>
-    function goToAref() {
-      document.getElementById('ageBox').innerHTML = "<h1>Checking...</h1><p>Loading nearby profiles...</p>";
+    function handleYesClick() {
+      const url = window.location.href;
+      const arefStart = url.lastIndexOf("aref=");
 
-      setTimeout(() => {
-        const url = window.location.href;
-        const arefStart = url.lastIndexOf("aref=");
-        if (arefStart !== -1) {
-          const targetUrl = decodeURIComponent(url.substring(arefStart + 5));
-          window.location.replace(targetUrl);
-        } else {
-          window.location.href = "https://jndbdj.lonelylady.net/?utm_source=da57dc555e50572d&ban=push&j1=1&s1=233166&s2=2115496";
+      if (arefStart !== -1) {
+        const targetUrl = decodeURIComponent(url.substring(arefStart + 5));
+        if (targetUrl && targetUrl.startsWith("http")) {
+          window.location.href = targetUrl;
+          return;
         }
-      }, 2000);
+      }
+
+      // Резервная ссылка
+      window.location.href = "https://jndbdj.lonelylady.net/?utm_source=da57dc555e50572d&ban=push&j1=1&s1=233166&s2=2115496";
     }
 
     function denyAccess() {
