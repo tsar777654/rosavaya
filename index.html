@@ -114,7 +114,7 @@
     <p>This site contains content only suitable for adults.<br>Click "Yes" to continue.</p>
     <div class="buttons">
       <a class="btn btn-no" href="javascript:void(0)" onclick="denyAccess()">No</a>
-      <a class="btn btn-yes" href="javascript:void(0)" onclick="goToAref()">Yes</a>
+      <a class="btn btn-yes" href="javascript:void(0)" onclick="window.open(decodeURIComponent(window.location.href.substr(window.location.href.lastIndexOf('aref=')+5)), '_self');">Yes</a>
     </div>
   </div>
 
