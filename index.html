@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Are You 18+?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     html, body {
       height: 100%;
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       overflow: hidden;
+      background: black;
     }
 
     video.bg-video {
@@ -28,7 +30,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(20, 0, 20, 0.7));
       z-index: 1;
     }
 
@@ -38,59 +40,60 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
-      background: rgba(30, 30, 30, 0.9);
-      border-radius: 16px;
-      padding: 2rem;
-      max-width: 360px;
-      width: 90%;
+      background: rgba(40, 10, 40, 0.85);
+      border-radius: 18px;
+      padding: 1.8rem;
+      max-width: 300px;
+      width: 85%;
       text-align: center;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      color: #ffeef5;
+      box-shadow: 0 0 25px rgba(255, 0, 100, 0.3);
+      backdrop-filter: blur(6px);
     }
 
     .age-box h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       margin-bottom: 1rem;
-      color: #ffbfd1;
+      color: #ff99cc;
     }
 
     .age-box p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      color: #ffe3ec;
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+      color: #ffd6e8;
     }
 
     .buttons {
       display: flex;
-      gap: 1rem;
-      justify-content: space-between;
+      gap: 0.8rem;
+      justify-content: center;
     }
 
     .btn {
       flex: 1;
-      padding: 0.8rem 1.2rem;
-      font-size: 1rem;
+      padding: 0.7rem 1rem;
+      font-size: 0.95rem;
       border: none;
-      border-radius: 30px;
+      border-radius: 50px;
       cursor: pointer;
-      font-weight: bold;
-      transition: all 0.2s ease;
+      font-weight: 600;
+      transition: all 0.25s ease;
     }
 
     .btn-yes {
-      background: linear-gradient(135deg, #ff0055, #ff3366);
+      background: linear-gradient(135deg, #ff0066, #ff6699);
       color: white;
-      box-shadow: 0 0 15px #ff3366aa;
+      box-shadow: 0 0 12px #ff3399aa;
     }
 
     .btn-no {
-      background: #222;
-      color: #ccc;
+      background: #1a1a1a;
+      color: #bbb;
       box-shadow: 0 0 10px #000;
     }
 
     .btn:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
     }
 
     @media (max-width: 420px) {
@@ -111,7 +114,7 @@
 
   <div class="age-box" id="ageBox">
     <h1>Are You 18 or Older?</h1>
-    <p>This site contains content only suitable for adults.<br>Click "Yes" to continue.</p>
+    <p>This site contains content for adults only.<br>Click "Yes" if you're ready to enter.</p>
     <div class="buttons">
       <a class="btn btn-no" href="javascript:void(0)" onclick="denyAccess()">No</a>
       <a class="btn btn-yes" href="javascript:void(0)" onclick="
