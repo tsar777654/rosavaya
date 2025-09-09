@@ -39,34 +39,29 @@
       transform: translate(-50%, -50%);
       z-index: 2;
       background: rgba(20, 0, 30, 0.75);
-      border-radius: 20px;
-      padding: 2rem;
-      max-width: 340px;
-      width: 85%;
+      border-radius: 32px; /* закругленные углы */
+      padding: 1.2rem;     /* меньше внутренний отступ */
+      max-width: 250px;    /* прямоугольник компактнее */
+      width: 75%;
       text-align: center;
       color: #ffeef5;
-      box-shadow: 0 0 35px rgba(255, 0, 150, 0.5), inset 0 0 25px rgba(255, 0, 150, 0.2);
-      backdrop-filter: blur(12px);
+      box-shadow: 0 0 25px rgba(255, 0, 150, 0.4), inset 0 0 18px rgba(255, 0, 150, 0.2);
+      backdrop-filter: blur(10px);
       border: 3px solid transparent;
       background-clip: padding-box, border-box;
       animation: borderGlow 4s linear infinite, floaty 6s ease-in-out infinite;
     }
 
     .age-box h1 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
-      color: #ff99cc;
-      text-shadow: 0 0 8px #ff4da6, 0 0 20px #ff80c0, 0 0 40px #ff4da6;
-      font-weight: 800;
-      letter-spacing: 1px;
+      color: #ffbfd1;
     }
 
     .age-box p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       margin-bottom: 2rem;
-      color: #ffe6f2;
-      text-shadow: 0 0 6px #ff80c0, 0 0 14px #ff3399;
-      line-height: 1.5;
+      color: #ffe3ec;
     }
 
     .buttons {
@@ -77,101 +72,80 @@
 
     .btn {
       flex: 1;
-      padding: 0.9rem 1.3rem;
-      font-size: 1rem;
-      font-weight: 700;
-      border: none;
+      padding: 0.7rem 1rem;
+      font-size: 0.95rem;
+      border: 2px solid transparent;
       border-radius: 50px;
       cursor: pointer;
-      transition: all 0.4s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      position: relative;
-      overflow: hidden;
+      font-weight: 600;
+      transition: all 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
     }
 
     .btn-yes {
-      background: linear-gradient(135deg, #ff007f, #ff66b2, #ff3399);
-      color: #fff;
-      box-shadow: 0 0 18px rgba(255, 0, 120, 0.7), 0 0 40px rgba(255, 50, 160, 0.5);
-      animation: neonPulse 3s ease-in-out infinite;
-      position: relative;
-      overflow: hidden;
+      background: linear-gradient(135deg, #ff0066, #ff6699);
+      color: white;
+      box-shadow: 0 0 12px #ff3399aa;
+      animation: pulse-button 4s ease-in-out infinite;
     }
-
-    /* Блёстки вокруг кнопки */
-    .btn-yes::before,
-    .btn-yes::after {
-      content: "";
-      position: absolute;
-      top: -30%;
-      left: -30%;
-      width: 160%;
-      height: 160%;
-      background: radial-gradient(circle, rgba(255,200,230,0.9) 0%, transparent 60%) repeat;
-      background-size: 80px 80px;
-      animation: sparkle 6s linear infinite;
-      z-index: -1;
-      opacity: 0.6;
-    }
-    .btn-yes::after {
-      animation-delay: 3s;
-      opacity: 0.4;
-    }
-
-    /* Искры поверх кнопки */
-    .btn-yes span.spark {
-      position: absolute;
-      border-radius: 50%;
-      width: 6px;
-      height: 6px;
-      background: white;
-      box-shadow: 0 0 10px #fff, 0 0 20px #ff66cc, 0 0 30px #ff3399;
-      animation: sparkBlink 2s infinite;
-      pointer-events: none;
-    }
-    .btn-yes span.spark:nth-child(1) { top: 25%; left: 20%; animation-delay: 0s; }
-    .btn-yes span.spark:nth-child(2) { top: 50%; left: 70%; animation-delay: 0.5s; }
-    .btn-yes span.spark:nth-child(3) { top: 75%; left: 40%; animation-delay: 1s; }
-    .btn-yes span.spark:nth-child(4) { top: 30%; left: 80%; animation-delay: 1.5s; }
 
     .btn-no {
-      background: linear-gradient(135deg, #222, #444);
-      color: #ccc;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(100, 100, 100, 0.2);
+      background: #1a1a1a;
+      color: #bbb;
+      box-shadow: 0 0 8px #000;
+      animation: pulse-button 6s ease-in-out infinite;
+    }
+
+    .btn:hover {
+      animation: vibrate 0.3s linear;
     }
 
     .btn-yes:hover {
-      transform: scale(1.08);
-      background: linear-gradient(135deg, #ff3399, #ff66cc, #ff99cc);
-      box-shadow: 0 0 30px #ff66b2, 0 0 60px #ff3399;
+      border: 2px solid #ff99cc;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.6), 0 0 10px rgba(255, 105, 180, 0.4);
     }
 
     .btn-no:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #333, #555);
-      box-shadow: 0 0 20px rgba(200, 200, 200, 0.4);
+      border: 2px solid #666;
+      box-shadow: 0 0 14px rgba(180, 180, 180, 0.3), 0 0 6px rgba(180, 180, 180, 0.2);
     }
 
-    /* Анимации */
-    @keyframes neonPulse {
-      0%, 100% {
-        box-shadow: 0 0 18px rgba(255, 0, 120, 0.7), 0 0 40px rgba(255, 50, 160, 0.5);
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 25px rgba(255, 0, 100, 0.25);
       }
       50% {
-        box-shadow: 0 0 30px rgba(255, 0, 160, 0.9), 0 0 70px rgba(255, 70, 180, 0.7);
+        transform: translate(-50%, -50%) scale(1.02);
+        box-shadow: 0 0 35px rgba(255, 0, 100, 0.35);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 25px rgba(255, 0, 100, 0.25);
       }
     }
 
-    @keyframes sparkle {
-      0% { transform: translate(0,0) rotate(0deg); }
-      50% { transform: translate(-10px,-10px) rotate(180deg); }
-      100% { transform: translate(0,0) rotate(360deg); }
+    @keyframes pulse-button {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 0, 100, 0.2);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 18px rgba(255, 0, 100, 0.4);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 0, 100, 0.2);
+      }
     }
 
-    @keyframes sparkBlink {
-      0%, 100% { opacity: 0; transform: scale(0.3); }
-      50% { opacity: 1; transform: scale(1.2); }
+    @keyframes vibrate {
+      0% { transform: scale(1); }
+      20% { transform: scale(1.01) translate(-1px, 1px); }
+      40% { transform: scale(1.01) translate(-1px, -1px); }
+      60% { transform: scale(1.01) translate(1px, 1px); }
+      80% { transform: scale(1.01) translate(1px, -1px); }
+      100% { transform: scale(1); }
     }
 
     @keyframes borderGlow {
@@ -186,7 +160,9 @@
     }
 
     @media (max-width: 420px) {
-      .buttons { flex-direction: column; }
+      .buttons {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -219,13 +195,7 @@
             window.location.href = 'https://jndbdj.briiliantsdate.net/?utm_source=da57dc555e50572d&ban=push&j5=1&j6=1&s1=233166&s2=2115496&click_id=<tid>';
           }
         })();
-      ">
-        Yes
-        <span class="spark"></span>
-        <span class="spark"></span>
-        <span class="spark"></span>
-        <span class="spark"></span>
-      </a>
+      ">Yes</a>
     </div>
   </div>
 
