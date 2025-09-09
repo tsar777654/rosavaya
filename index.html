@@ -40,16 +40,14 @@
       z-index: 2;
       background: rgba(20, 0, 30, 0.75);
       border-radius: 32px; /* закругленные углы */
-      padding: 1.2rem;     /* меньше внутренний отступ */
-      max-width: 250px;    /* прямоугольник компактнее */
+      padding: 1.2rem;     /* внутренний отступ */
+      max-width: 250px;    /* компактный прямоугольник */
       width: 75%;
       text-align: center;
       color: #ffeef5;
       box-shadow: 0 0 25px rgba(255, 0, 150, 0.4), inset 0 0 18px rgba(255, 0, 150, 0.2);
       backdrop-filter: blur(10px);
-      border: 3px solid transparent;
-      background-clip: padding-box, border-box;
-      animation: borderGlow 4s linear infinite, floaty 6s ease-in-out infinite;
+      /* border и анимация рамки удалены */
     }
 
     .age-box h1 {
@@ -146,12 +144,6 @@
       60% { transform: scale(1.01) translate(1px, 1px); }
       80% { transform: scale(1.01) translate(1px, -1px); }
       100% { transform: scale(1); }
-    }
-
-    @keyframes borderGlow {
-      0% { border-image: linear-gradient(45deg, #ff007f, #ff66cc, #ff3399) 1; }
-      50% { border-image: linear-gradient(225deg, #ff3399, #ff80bf, #ff007f) 1; }
-      100% { border-image: linear-gradient(45deg, #ff007f, #ff66cc, #ff3399) 1; }
     }
 
     @keyframes floaty {
